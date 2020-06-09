@@ -22,6 +22,11 @@ Route::get('/', function () {
 Route::get('acceiull', function () {
     return view('acceiull');
 });
+Route::get('publications/create', 'PublicationController@create');
+Route::post('publications', 'PublicationController@store');
+
+Route::get('publications', 'PublicationController@index');
+
 
 
 Auth::routes();
