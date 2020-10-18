@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Http\UploadedFile;
+
 use App\Publication;
 
 class PublicationController extends Controller
@@ -16,6 +18,17 @@ class PublicationController extends Controller
     	$publication = new Publication();
     	$publication->titre = $request->input('titre');
     	$publication->contenu = $request->input('contenu');
+		
+		$publication->wilaya = $request->input('wilaya');
+		$publication->profession = $request->input('profession');
+		$publication->maladie = $request->input('maladie');
+		
+		$publication->source = $request->input('source');
+		
+		if($request->hasFile('file')){
+		$publication->file = $request->file->store('file');
+		
+		}
 		
 		
     	$publication->save();
@@ -35,10 +48,35 @@ class PublicationController extends Controller
     }
 
 
-	public function edit(){
-	}
-	public function update(){
-	}
-	public function destroy(){
-	}
+	  public function destroy($id){
+    	
+    	$publication = Publication::find($id);
+    	$publication->delete();
+    	return redirect('publications');
+
+    } 
+	
+	public function edit($id){
+    	$publication = Publication::find($id);
+    	return view('publication.edit', ['publication'=>$publication]);
+    }
+    public function update(Request $request, $id){
+    	$publication = Publication::find($id);
+    	$publication->titre = $request->input('titre');
+    	$publication->contenu = $request->input('contenu');
+		$publication->wilaya = $request->input('wilaya');
+		$publication->profession = $request->input('profession');
+		$publication->maladie = $request->input('maladie');
+		$publication->source = $request->input('source');
+    	$publication->save();
+    	return redirect('publications');    	
+    }
+
+public function show($id){
+	
+	
+	return view('publication.show' , ['id'=> $id]);
+	
+}
+
 }

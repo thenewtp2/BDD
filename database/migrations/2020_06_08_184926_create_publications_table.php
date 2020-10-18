@@ -17,6 +17,9 @@ class CreatePublicationsTable extends Migration
             $table->id();
 			$table->string('titre');
 			$table->string('contenu');
+			$table->string('destinataire');
+			$table->string('source');
+			
 			
             $table->timestamps();
         });

@@ -1,293 +1,154 @@
-@extends('layouts.master')
-@Section('content')
+@extends('layouts.master2')
+@section('content')
 
- <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Bootstrap Elegant Table Design</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
-<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<style type="text/css">
-    body {
-        color: #566787;
-        background: #f5f5f5;
-		font-family: 'Roboto', sans-serif;
-	}
-	.table-wrapper {
-        background: #fff;
-        padding: 20px;
-        margin: 30px 0;
-        box-shadow: 0 1px 1px rgba(0,0,0,.05);
-    }
-	.table-title {
-		font-size: 15px;
-        padding-bottom: 10px;
-        margin: 0 0 10px;
-		min-height: 45px;
-    }
-    .table-title h2 {
-        margin: 5px 0 0;
-        font-size: 24px;
-    }
-	.table-title select {
-		border-color: #ddd;
-		border-width: 0 0 1px 0;
-		padding: 3px 10px 3px 5px;
-		margin: 0 5px;
-	}
-	.table-title .show-entries {
-		margin-top: 7px;
-	}
-	.search-box {
-        position: relative;
-        float: right;
-    }
-	.search-box .input-group {
-		min-width: 200px;
-		position: absolute;
-		right: 0;
-	}
-	.search-box .input-group-addon, .search-box input {
-		border-color: #ddd;
-		border-radius: 0;
-	}
-	.search-box .input-group-addon {
-		border: none;
-		border: none;
-		background: transparent;
-		position: absolute;
-		z-index: 9;
-	}
-    .search-box input {
-        height: 34px;
-        padding-left: 28px;		
-		box-shadow: none !important;
-		border-width: 0 0 1px 0;
-    }
-	.search-box input:focus {
-		border-color: #3FBAE4;
-	}
-    .search-box i {
-        color: #a0a5b1;
-        font-size: 19px;
-		position: relative;
-		top: 2px;
-		left: -10px;
-    }
-    table.table tr th, table.table tr td {
-        border-color: #e9e9e9;
-    }
-    table.table th i {
-        font-size: 13px;
-        margin: 0 5px;
-        cursor: pointer;
-    }
-    table.table td:last-child {
-        width: 130px;
-    }
-    table.table td a {
-        color: #a0a5b1;
-        display: inline-block;
-        margin: 0 5px;
-    }
-	table.table td a.view {
-        color: #03A9F4;
-    }
-    table.table td a.edit {
-        color: #FFC107;
-    }
-    table.table td a.delete {
-        color: #E34724;
-    }
-    table.table td i {
-        font-size: 19px;
-    }    
-    .pagination {
-        float: right;
-        margin: 0 0 5px;
-    }
-    .pagination li a {
-        border: none;
-        font-size: 13px;
-        min-width: 30px;
-        min-height: 30px;
-		padding: 0 10px;
-        color: #999;
-        margin: 0 2px;
-        line-height: 30px;
-        border-radius: 30px !important;
-        text-align: center;
-    }
-    .pagination li a:hover {
-        color: #666;
-    }	
-    .pagination li.active a {
-        background: #03A9F4;
-    }
-    .pagination li.active a:hover {        
-        background: #0397d6;
-    }
-	.pagination li.disabled i {
-        color: #ccc;
-    }
-    .pagination li i {
-        font-size: 16px;
-        padding-top: 6px
-    }
-    .hint-text {
-        float: left;
-        margin-top: 10px;
-        font-size: 13px;
-    }
-</style>
-<script type="text/javascript">
-$(document).ready(function(){
-	$('[data-toggle="tooltip"]').tooltip();
-	// Animate select box length
-	var searchInput = $(".search-box input");
-	var inputGroup = $(".search-box .input-group");
-	var boxWidth = inputGroup.width();
-	searchInput.focus(function(){
-		inputGroup.animate({
-			width: "300"
-		});
-	}).blur(function(){
-		inputGroup.animate({
-			width: boxWidth
-		});
-	});
-});
-</script>
-</head>
-<body>
-    <div class="container">
-        <div class="table-wrapper">			
-            <div class="table-title">
-                <div class="row">
-                    <div class="col-sm-4">
-						<div class="show-entries">
-							<span>Show</span>
-							<select>
-								<option>5</option>
-								<option>10</option>
-								<option>15</option>
-								<option>20</option>
-							</select>
-							<span>entries</span>
-						</div>						
-					</div>
-					<div class="col-sm-4">
-						<h2 class="text-center"><b>Liste des signals</b></h2>
-					</div>
-                    <div class="col-sm-4">
-                        <div class="search-box">
-							<div class="input-group">
-								<span class="input-group-addon"><i class="material-icons">&#xE8B6;</i></span>
-								<input type="text" class="form-control" placeholder="Search&hellip;">
-							</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <table class="table table-bordered">
-                <thead>
-                    <tr>
-                        <th>#</th>
-                        <th>Willaya</th>
-                        <th>Commune</th>
-                        <th>Status</th>
-                        <th>Actions</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>Otto</td>
-                        <td>Otto</td>
-                        <td>
-                          <span class="label label-success">new</span>
-                          
-                        </td>
-                        
-                        <td>
-							<a href="#" class="view" title="View" data-toggle="tooltip"><i class="material-icons">&#xE417;</i></a>
-                            <a href="#" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
-                            <a href="#" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
-                            
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>Otto</td>
-                        <td>Otto</td>
-                        <td> <span class="label label-success">new</span></td>
-                        
-                        <td>
-							<a href="#" class="view" title="View" data-toggle="tooltip"><i class="material-icons">&#xE417;</i></a>
-                            <a href="#" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
-                            <a href="#" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>Otto</td>
-                        <td>Otto</td>
-                        <td> <span class="label label-info">envoyé</span></td>
-                        
-                        <td>
-							<a href="#" class="view" title="View" data-toggle="tooltip"><i class="material-icons">&#xE417;</i></a>
-                            <a href="#" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
-                            <a href="#" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>4</td>
-                        <td>Otto</td>
-                        <td>Otto</td>
-                        <td> <span class="label label-success">new</span></td>
-                        
-                        <td>
-							<a href="#" class="view" title="View" data-toggle="tooltip"><i class="material-icons">&#xE417;</i></a>
-                            <a href="#" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
-                            <a href="#" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>5</td>
-                        <td>Otto</td>
-                        <td>Otto</td>
-                        <td><span class="label label-info">envoyé</span></td>
-                        
-                        <td>
-							<a href="#" class="view" title="View" data-toggle="tooltip"><i class="material-icons">&#xE417;</i></a>
-                            <a href="#" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
-                            <a href="#" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
-                        </td>
-                    </tr>        
-                </tbody>
-            </table>
-            <div class="clearfix">
-                <div class="hint-text">Showing <b>5</b> out of <b>25</b> entries</div>
-                <ul class="pagination">
-                    <li class="page-item active"><a href="#">Previous</a></li>
-                    <li class="page-item"><a href="#" class="page-link">1</a></li>
-                    <li class="page-item"><a href="#" class="page-link">2</a></li>
-                    <li class="page-item"><a href="#" class="page-link">3</a></li>
-                    <li class="page-item"><a href="#" class="page-link">4</a></li>
-                    <li class="page-item"><a href="#" class="page-link">5</a></li>
-                    <li class="page-item"><a href="#" class="page-link">Next</a></li>
-                </ul>
-            </div>
+<div class="top-nav s-12 l-10">
+          <p class="nav-text"></p>
+        <ul class="right chevron">
+          <li class=""><a href="{{url('inscrire')}}" class="">S'inscrire</a></li>
+            <li id="nav-login-btn" class="active"><a href="{{url('login')}}" class="">Login</a></li>
+        </ul>
         </div>
-    </div>     
-</body>
-</html>                      
+        </div>
+      </nav>
+    </header>
+    
+    <!-- MAIN -->
+    <main role="main">
+      <!-- Main Carousel -->
+        <section class="section background-dark">
+        <div class="line">
+          <div class="carousel-fade-transition owl-carousel carousel-main carousel-nav-white carousel-wide-arrows">
+            <div class="item">
+              <div class=" s-12 center">
+                <img src="https://www.algerie-focus.com/wp-content/uploads/2020/10/coronavirus-4914026_1280-1-1.jpg" alt="">
+                <div class="carousel-content">
+                  <div class="padding-2x">
+                    <div class="s-12 m-12 l-8">
+                      <p class="text-white text-s-size-20 text-m-size-40 text-l-size-60 margin-bottom-40 text-thin text-line-height-1"></p>
+                      <p class="text-white text-size-16 margin-bottom-40"><br> </p>  
+                    </div>                  
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+      </section>
+      
+      <!-- Section 1 -->
+      <section class="section background-white"> 
+        <div class="line">
+          <div class="margin">
+            <div class="s-12 m-12 l-4 margin-m-bottom">
+              <img class="margin-bottom" src="C:\Users\AZIZIMOUD\Downloads\cdc-k0KRNtqcjfw-unsplash.jpg" alt="">
+              <h2 class="text-thin">Qu'est ce que le covid 19 ?</h2>
+              <p>Le nouveau coronavirus 2019 (2019-nCoV) est un nouveau virus qui provoque des maladies respiratoires.</p> 
+              <a class="text-more-info text-primary-hover" href="/">Read more</a>                
+            </div>
+            <div class="s-12 m-12 l-4 margin-m-bottom">
+              <img class="margin-bottom" src="C:\Users\AZIZIMOUD\Downloads\is (8).jpg" alt="">
+              <h2 class="text-thin">Quand utiliser un masque ?</h2>
+              <p>Si vous êtes en bonne santé, vous ne devez utiliser un masque que si vous vous occupez d’une personne présumée infectée par le 2019‑nCoV.</p> 
+              <a class="text-more-info text-primary-hover" href="/">Read more</a>                
+            </div>
+            <div class="s-12 m-12 l-4 margin-m-bottom">
+              <img class="margin-bottom" src="C:\Users\AZIZIMOUD\Downloads\is (9).jpg" alt="">
+              <h2 class="text-thin">Quels sont les symptômes de la COVID-19 ?</h2>
+              <p>Les symptômes les plus fréquents de la ‎COVID-19 sont la fièvre, la toux sèche et la ‎fatigue.</p> 
+              <a class="text-more-info text-primary-hover" href="/">Read more</a>                
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <!-- Section 2 -->
+      
+<!-- Section 2 -->
+<section class="section background-primary text-center">
+  <div class="line">
+    <div class="s-12 m-10 l-8 center">
+      <h2 class="headline text-thin text-s-size-30"></h2>
+      <p class="text-size-20"></p>
+    </div>
+  </div>  
+</section>
+
+<!-- Section 3 -->
+<section class="section background-white">
+  <div class="full-width text-center">
+    <img class="center margin-bottom-30" style="margin-top: -210px;" src="" alt="">
+    <div class="line">
+      <h2 class="headline text-thin text-s-size-30"> <span class="text-primary"></span> </h2>
+      <p class="text-size-20 text-s-size-16 text-thin"> </p>
+      <i class="icon-more_node_links icon2x text-primary margin-top-bottom-10"></i>
+      <p class="text-size-20 text-s-size-16 text-thin text-primary"></p>
+    </div>  
+  </div>  
+</section>
+<hr class="break margin-top-bottom-0">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+      <!-- Section 4 --> 
+      <section class="section background-white">
+        <div class="line">
+          <h2 class="text-thin headline text-center text-s-size-30 margin-bottom-50">Publications <span class="text-primary"></span></h2>
+          <div class="carousel-default owl-carousel carousel-wide-arrows">
+            <div class="item">
+              <div class="margin"> 
+                <div class="s-12 m-12 l-6">
+                  <div class="image-border-radius margin-m-bottom">
+                    <div class="margin">
+                      <div class="s-12 m-12 l-4 margin-m-bottom">
+                        <a class="image-hover-zoom" href="/"><img src="C:\Users\AZIZIMOUD\Downloads\e10a377387916737276343e9718ee508_Generic.jpg" alt=""></a>
+                      </div>
+                      <div class="s-12 m-12 l-8 margin-m-bottom">
+                        <h3><a class="text-dark text-primary-hover" href="/">
+                          Les examens du Bac et du BEM reportés au mois de septembre</a></h3>
+                        <p>ALGER- Le Conseil des ministres, réuni dimanche sous la présidence du Président de la.</p>
+                        <a class="text-more-info text-primary-hover" href="{{url('pub1')}}">Read more</a>
+                      </div>
+                    </div>  
+                  </div>
+                </div>
+                <div class="s-12 m-12 l-6">
+                  <div class="image-border-radius">
+                    <div class="margin">
+                      <div class="s-12 m-12 l-4 margin-m-bottom">
+                        <a class="image-hover-zoom" href="/"><img src="C:\Users\AZIZIMOUD\Downloads\7a520a40846c84c6ec9673f93d20b9ce_Generic.jpg" alt=""></a>
+                      </div>
+                      <div class="s-12 m-12 l-8">
+                        <h3><a class="text-dark text-primary-hover" href="/">
+                          Alger: port obligatoire de masques pour les propriétaires des locaux commerciaux et leurs employés</a></h3>
+                        <p>ALGER - Le port de masques est désormais obligatoire pour les propriétaires et.</p>
+                        <a class="text-more-info text-primary-hover" href="/">Read more</a>
+                      </div>
+                    </div>  
+                  </div>
+                </div> 
+              </div>
+            </div>
+            
+            
+            </div>
+          </div>
+        </div>    
+      
+        </div>    
+      </section>
+      
+    </main>
 
 @endsection
