@@ -1,7 +1,8 @@
-@extends('layouts.app')
+@extends('layouts.master1')
 @yield('content')
 <form action= "{{url('publications/'.$publication->id)}}" method="POST">
 <input type="hidden" name="_method" value="PUT">
+
 
 	{{ csrf_field()}}
 
@@ -37,12 +38,11 @@
             <label for="exampleFormControlFile1">file</label>
             <input type="file" class="form-control-file" id="exampleFormControlFile1" value="{{$publication->file}}">
           </div>
-		  <div class="form-row">
-                            <div class="form-group">
-                                <label for="password">Wilaya</label>
-                                <div class="select-list">
-                                    <select name="wilaya" id="country" required>
-									<option value=""></option>
+		  <div class="form-group">
+    <label for="exampleFormControlSelect1">wilaya</label>
+    <select class="form-control" name="wilaya" value="{{$publication->wilaya}}">
+                                    
+									<option value=""> </option>
                                         <option value="adrar">Adrar</option>
                                         <option value="chlef">Chlef</option>
                                         <option value="laghout">Laghouat</option>
@@ -96,14 +96,12 @@
 
 
                                     </select>
-                                </div>
-                            </div>
-		<div class="form-row">
-                            <div class="form-group">
-                                <label for="password">profession</label>
-                                <div class="select-list">
-                                    <select name="profession" id="country" required>
-									<option value="US"></option>
+  </div>
+		<div class="form-group">
+    <label for="exampleFormControlSelect1">profession</label>
+    <select class="form-control" name="profession" value="{{$publication->profession}}">
+                                   
+									<option value=""></option>
                                         <option value="medecin">medecin</option>
                                         <option value="professeur">professeur</option>
                                         <option value="commerçant">commerçant</option>
@@ -117,13 +115,12 @@
 
                                     </select>
                                 </div>
-                            </div>
-		<div class="form-row">
-                            <div class="form-group">
-                                <label for="password">maladie</label>
-                                <div class="select-list">
-                                    <select name="maladie" id="country" required>
-									<option value="US"></option>
+                           
+	<div class="form-group">
+    <label for="exampleFormControlSelect1">maladie</label>
+    <select class="form-control" name="maladie" value="{{$publication->maladie}}">
+                                   
+									<option value=""></option>
                                         <option value="diabète">diabète</option>
                                         <option value="a pression artérielle">la pression artérielle</option>
                                         <option value="Collestérole">Collestérole</option>
@@ -137,7 +134,7 @@
 
                                     </select>
                                 </div>
-                            </div>
+                          
 		
 		<div class="form-group">
           <label for="formGroupExampleInput">source</label>

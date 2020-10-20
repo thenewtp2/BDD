@@ -23,9 +23,7 @@ Route::get('acceiull', function () {
     return view('acceiull');
 });
 
-Route::get('inscrire', function () {
-    return view('inscrire');
-});
+
 
 Route::get('login', function () {
     return view('login');
@@ -42,20 +40,47 @@ Route::get('pub1', function () {
 Route::get('je dénonce', function () {
     return view('je dénonce');
 });
+Route::get('inscrire', function () {
+    return view('citoyens/inscrire');
+});
 
 
 Route::get('idés/idee', 'IdéController@idee');
 Route::get('publications/create', 'PublicationController@create');
 Route::post('publications', 'PublicationController@store');
 
+ 
+
 Route::get('publications', 'PublicationController@index');
 
+ 
+
 Route::delete('publications/{id}', 'PublicationController@destroy');
+
 Route::get('publications/{id}/edit', 'PublicationController@edit');
 Route::get('publications/{id}/show', 'PublicationController@show');
 Route::put('publications/{id}', 'PublicationController@update');
 
+
+
+
+Route::get('citoyens/create', 'CitoyenController@create');
+Route::post('citoyens', 'CitoyenController@store');
+
+
+
+ 
+
 Route::get('citoyens', 'CitoyenController@index');
+
+ 
+
+Route::delete('citoyens/{id}', 'CitoyenController@destroy');
+
+
+
+
+
 Route::get('chifres', 'ChifreController@index');
 Route::get('chifres/create', 'ChifreController@create');
 Route::post('chifres', 'ChifreController@store');
@@ -65,9 +90,15 @@ Route::put('chifres/{id}', 'ChifreController@update');
 Route::delete('chifres/{id}', 'ChifreController@destroy');
 
 
+Route::post('idés', 'IdéController@store');
+
 
 Route::get('idés', 'IdéController@index');
 Route::delete('idés/{id}', 'IdéController@destroy');
+Route::get('idés/create', 'IdéController@create');
+Route::get('idés/{id}/edit', 'IdéController@edit');
+Route::put('idés/{id}', 'IdéController@update');
+
 
 Route::get('signals', 'SignalController@index');
 Route::delete('signals/{id}', 'SignalController@destroy');

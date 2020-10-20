@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.master1')
 @yield('content')
 <form action= "{{url('chifres/'.$chifre->id)}}" method="POST">
 <input type="hidden" name="_method" value="PUT">
@@ -24,11 +24,11 @@
     <!-- /.content-header -->
 <br><br>
     <form>
-         <div class="form-row">
-                            <div class="form-group">
-                                <label for="password" value="{{$chifre->wilaya}}">Wilaya</label>
-                                <div class="select-list" >
-                                    <select name="wilaya" id="country" required >
+         <div class="form-group">
+    <label for="exampleFormControlSelect1" value="{{$chifre->wilaya}}">wilaya</label>
+    <select class="form-control" name="wilaya">
+                               
+                                   
 									<option value=""></option>
                                         <option value="adrar">Adrar</option>
                                         <option value="chlef">Chlef</option>
@@ -84,7 +84,7 @@
 
                                     </select>
                                 </div>
-                            </div>
+                            
 		
 		<div class="form-group">
           <label for="formGroupExampleInput">nombre de malade</label>

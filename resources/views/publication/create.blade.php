@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('layouts.master1')
 @section('content')
 
 <form action= "{{url('publications')}}" method="POST">
@@ -39,12 +39,11 @@
             <label for="">file</label>
             <input type="file" name="file"class="form-control-file" id="exampleFormControlFile1">
           </div>
-		 <div class="form-row">
-                            <div class="form-group">
-                                <label for="password">Wilaya</label>
-                                <div class="select-list">
-                                    <select name="wilaya" id="country" required>
-									<option value=""></option>
+		  
+		   <div class="form-group">
+    <label for="exampleFormControlSelect1">wilaya</label>
+    <select class="form-control" name="wilaya" id="exampleFormControlSelect1" >
+     <option value=""></option>
                                         <option value="adrar">Adrar</option>
                                         <option value="chlef">Chlef</option>
                                         <option value="laghout">Laghouat</option>
@@ -95,51 +94,37 @@
                                         <option value="VN">Rélizane</option>
                                         
 
-
-
-                                    </select>
-                                </div>
-                            </div>
-		<div class="form-row">
-                            <div class="form-group">
-                                <label for="password">profession</label>
-                                <div class="select-list">
-                                    <select name="profession" id="country" required>
-									<option value="US"></option>
+    </select>
+  </div>
+ 
+  <div class="form-group">
+    <label for="exampleFormControlSelect1">profession</label>
+    <select class="form-control" name="profession" id="exampleFormControlSelect1">
+      <option value=""></option>
                                         <option value="medecin">medecin</option>
                                         <option value="professeur">professeur</option>
                                         <option value="commerçant">commerçant</option>
                                         <option value="pharmaciens">pharmaciens</option>
                                         <option value="ingénieurs">ingénieurs</option>
                                         <option value="artisans">artisans</option>
+    </select>
+  </div>
                                        
-                                        
-
-
-
-                                    </select>
-                                </div>
-                            </div>
-		<div class="form-row">
-                            <div class="form-group">
-                                <label for="password">maladie</label>
-                                <div class="select-list">
-                                    <select name="maladie" id="country" required>
-									<option value="US"></option>
+   <div class="form-group">
+    <label for="exampleFormControlSelect1">maladie</label>
+    <select class="form-control" name="maladie" id="exampleFormControlSelect1">
+     <option value=""></option>
                                         <option value="diabète">diabète</option>
                                         <option value="a pression artérielle">la pression artérielle</option>
                                         <option value="Collestérole">Collestérole</option>
                                         <option value="Azme">Azme</option>
                                         <option value="Allergie">Allergie</option>
+    </select>
+  </div>
+		
+		
                                        
-                                     
-                                   
-
-
-
-                                    </select>
-                                </div>
-                            </div>
+		
 		
 		<div class="form-group">
           <label for="formGroupExampleInput">source</label>

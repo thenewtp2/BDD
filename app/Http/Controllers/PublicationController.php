@@ -18,6 +18,7 @@ class PublicationController extends Controller
     	$publication = new Publication();
     	$publication->titre = $request->input('titre');
     	$publication->contenu = $request->input('contenu');
+		$publication->file=$request->input('file');
 		
 		$publication->wilaya = $request->input('wilaya');
 		$publication->profession = $request->input('profession');
@@ -26,7 +27,11 @@ class PublicationController extends Controller
 		$publication->source = $request->input('source');
 		
 		if($request->hasFile('file')){
-		$publication->file = $request->file->store('file');
+		$publication= $request->file('file');
+		$img = Image::make($publication);
+            $publication_name= time().'.'.$publication->getClientOriginalExtension();
+            $img->resize(400,300)->save('uploads/photospublications/'.$publication_name,60); 
+            $pub->file= 'uploads/photopublications/'.$publication_name;
 		
 		}
 		

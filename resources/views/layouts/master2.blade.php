@@ -17,9 +17,9 @@
 
     <link rel="stylesheet" href="css/template-style.css">
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700,800&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-    <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
-    <script type="text/javascript" src="js/jquery-ui.min.js"></script>    
-    <script type="text/javascript" src="js/validation.js"></script> 
+    <script type="text/javascript" src="../../js/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="../../js/jquery-ui.min.js"></script>    
+    <script type="text/javascript" src="../../js/validation.js"></script> 
   </head>  
   
   <body class="size-1140">
@@ -197,8 +197,8 @@
         </div>
       </section>
     </footer> 
-    <script type="text/javascript" src="js/responsee.js"></script>
-    <script type="text/javascript" src="owl-carousel/owl.carousel.js"></script>
-    <script type="text/javascript" src="js/template-scripts.js"></script>   
+    <script type="text/javascript" src="../../js/responsee.js"></script>
+    <script type="text/javascript" src="../../owl-carousel/owl.carousel.js"></script>
+    <script type="text/javascript" src="../../js/template-scripts.js"></script>   
    </body>
 </html>

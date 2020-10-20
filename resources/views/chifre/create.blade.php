@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('layouts.master1')
 @section('content')
 
 <form action= "{{url('chifres')}}" method="POST">
@@ -23,11 +23,10 @@
     <!-- /.content-header -->
 <br><br>
     <form>
-         <div class="form-row">
-                            <div class="form-group">
-                                <label for="password">Wilaya</label>
-                                <div class="select-list">
-                                    <select name="wilaya" id="country" required>
+        <div class="form-group">
+    <label for="exampleFormControlSelect1">wilaya</label>
+    <select class="form-control" name="wilaya">
+                                   
 									<option value=""></option>
                                         <option value="adrar">Adrar</option>
                                         <option value="chlef">Chlef</option>
@@ -83,7 +82,7 @@
 
                                     </select>
                                 </div>
-                            </div>
+                           
         
 		<div class="form-group">
           <label for="formGroupExampleInput">nombre de malade</label>

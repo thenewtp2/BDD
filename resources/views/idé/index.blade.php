@@ -198,9 +198,9 @@ $(document).ready(function(){
                     <tr>
                        
                         <th>Titre</th>
-                        <th>Catégories</th>
+                        <th>Categories</th>
                         <th>Status</th>
-                        <th>Vote</th>
+                        
                         
                         <th>Actions</th>
                     </tr>
@@ -211,9 +211,9 @@ $(document).ready(function(){
 					
 					<td>{{$idé->titre}}</td>
 					
-			<td>{{$idé->catégories}}</td>
+			<td>{{$idé->categories}}</td>
 			<td>{{$idé->status}}</td>
-			<td>{{$idé->vote}}</td>
+			
 			
 	
                         

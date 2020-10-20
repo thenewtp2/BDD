@@ -1,30 +1,11 @@
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<title>Contact V12</title>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-<!--===============================================================================================-->
-	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome1.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="css/1.css">
-	<link rel="stylesheet" type="text/css" href="css/2.css">
-<!--===============================================================================================-->
-</head>
-<body>
+@extends('layouts.master2')
+@section('content')
 
-	<!-- Content Wrapper. Contains page content -->
+<form action= "{{url('signals')}}" method="POST">
+	{{ csrf_field()}}
+<body>
+<!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <div class="content-header">
@@ -37,12 +18,12 @@
            
         </div><!-- /.col -->
     </div><!-- /.row -->
-        
-    
-    
-    <!-- /.content-header -->
-<br><br>
-   <form>
+
+	
+	
+		
+
+	  <form>
 	
 		
 
@@ -50,21 +31,21 @@
                             <div class="form-group">
                                 <label for="password">Wilaya</label>
                                 <div class="select-list">
-                                    <select name="country" id="country" required>
-									<option value="US"></option>
-                                        <option value="US">Adrar</option>
-                                        <option value="UK">Chlef</option>
-                                        <option value="VN">Laghouat</option>
+                                    <select name="wilaya" id="country" >
+									<option></option>
+                                        <option value="adrar">Adrar</option>
+                                        <option value="chlef">Chlef</option>
+                                        <option value="laghout">Laghouat</option>
                                         <option value="VN">Oum el bouaghi</option>
                                         <option value="VN">Batna</option>
                                         <option value="VN">Béjaya</option>
                                         <option value="VN">Biskra</option>
                                         <option value="VN">Béchar</option>
-                                        <option value="VN">Blida</option>
+                                        <option value="blida">Blida</option>
                                         <option value="VN">Bouira</option>
                                         <option value="VN">Tamanrasset</option>
                                         <option value="VN">Tébessa</option>
-                                        <option value="VN">Tlemcen</option>
+                                        <option value="tlemcen">Tlemcen</option>
                                         <option value="VN">Tiaret</option>
                                         <option value="VN">Tizi Ouzou</option>
                                         <option value="VN">Alger</option>
@@ -112,10 +93,10 @@
                                 <div class="form-group">
                                     <label for="password">Commune</label>
                                     <div class="select-list">
-                                        <select name="country" id="country" required>
+                                        <select name="commune" id="country" >
 										 <option value="US"></option>
                                             <option value="US">Tlemcen</option>
-                                            <option value="US">béni mester</option>
+                                            <option value="beni master">béni mester</option>
                                             <option value="UK">Chetouane</option>
                                            
                                             <option value="VN">Ain Talout</option>
@@ -212,32 +193,13 @@
 
 
 
-<!--===============================================================================================-->
-	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
-<!--===============================================================================================-->
-	<script src="vendor/bootstrap/js/popper.js"></script>
-	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-<!--===============================================================================================-->
-	<script src="vendor/select2/select2.min.js"></script>
-<!--===============================================================================================-->
-	<script src="vendor/tilt/tilt.jquery.min.js"></script>
-	<script >
-		$('.js-tilt').tilt({
-			scale: 1.1
-		})
-	</script>
-<!--===============================================================================================-->
-	<script src="js/main.js"></script>
 
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-23581568-13');
-</script>
 
 </body>
-</html>
+
+
+
+
+@endsection
+
+

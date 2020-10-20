@@ -8,10 +8,12 @@ use Illuminate\Http\UploadedFile;
 use App\Citoyen;
 class CitoyenController extends Controller
 {
+	
+	
   
   public function index(){
-    	$listcit = Citoyen::all();
-    	return view('citoyen.index', ['citoyens' => $listcit]);
+    	$listCit = Citoyen::all();
+    	return view('citoyen.index', ['citoyens' => $listCit]);
     }
 
 
@@ -30,6 +32,32 @@ class CitoyenController extends Controller
 	return view('citoyen.show' , ['id'=> $id]);
 	
 }
+
+public function create(){
+    	return view('citoyen.create');
+    }
+    public function store(Request $request){
+    	$citoyen = new Citoyen();
+    	$citoyen->nom = $request->input('nom');
+    	$citoyen->prenom = $request->input('prenom');
+		
+		$citoyen->date = $request->input('date');
+		
+		$citoyen->email = $request->input('email');
+		
+		$citoyen->password = $request->input('password');
+		$citoyen->profession = $request->input('profession');
+		$citoyen->maladie = $request->input('maladie');
+		$citoyen->wilaya = $request->input('wilaya');
+		
+		
+		
+		
+    	$citoyen->save();
+		return redirect('citoyens');
+
+    }
+	
   
   
 }

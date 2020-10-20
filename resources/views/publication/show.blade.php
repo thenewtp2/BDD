@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('layouts.master1')
 @section('content')
 
  <!-- Content Wrapper. Contains page content -->
@@ -41,9 +41,27 @@
                        
                       </div>
                       <!-- /.user-block -->
-                      <h1>Titres</h1>
-                      <p>
+					  
+					   @foreach($publications as $publication)
+
+                <tbody>
+                    <tr> 
+					
+					<td>{{$publication->titre}}</td>
+			<td>{{$publication->contenu}}</td>
+			
                         
+                       
+						   
+						   
+						   
+							
+                    </tr>
+					@endforeach
+                    
+                </tbody>
+                      <p>
+					  
                       </p>
 
                       <p>
@@ -51,7 +69,7 @@
                         <a href="#" class="link-black text-sm"><i class="far fa-thumbs-up mr-1"></i> Like</a>
                         <span class="float-right">
                           <a href="#" class="link-black text-sm">
-                            <i class="far fa-comments mr-1"></i> Comments ()
+                            <i class="far fa-comments mr-1"></i> Comments (5)
                           </a>
                         </span>
                       </p>
@@ -66,19 +84,19 @@
                       <!-- /.user-block -->
                       <div class="row mb-3">
                         <div class="col-sm-6">
-                          <img class="img-fluid" src="" alt="file">
+                          <img class="img-fluid" src="../../dist/img/photo1.png" alt="Photo">
                         </div>
                         <!-- /.col -->
                         <div class="col-sm-6">
                           <div class="row">
                             <div class="col-sm-6">
-                              <img class="img-fluid mb-3" src="" alt="file">
-                              <img class="img-fluid" src="" alt="file">
+                              <img class="img-fluid mb-3" src="../../dist/img/photo2.png" alt="Photo">
+                              <img class="img-fluid" src="../../dist/img/photo3.jpg" alt="Photo">
                             </div>
                             <!-- /.col -->
                             <div class="col-sm-6">
-                              <img class="img-fluid mb-3" src="" alt="file">
-                              <img class="img-fluid" src="" alt="file">
+                              <img class="img-fluid mb-3" src="../../dist/img/photo4.jpg" alt="Photo">
+                              <img class="img-fluid" src="../../dist/img/photo1.png" alt="Photo">
                             </div>
                             <!-- /.col -->
                              
@@ -94,7 +112,7 @@
                         <a href="#" class="link-black text-sm"><i class="far fa-thumbs-up mr-1"></i> Like</a>
                         <span class="float-right">
                           <a href="#" class="link-black text-sm">
-                            <i class="far fa-comments mr-1"></i> Comments ()
+                            <i class="far fa-comments mr-1"></i> Comments (5)
                           </a>
                         </span>
                       </p>

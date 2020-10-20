@@ -4,7 +4,7 @@
 <div class="top-nav s-12 l-10">
           <p class="nav-text"></p>
         <ul class="right chevron">
-          <li class=""><a href="{{url('inscrire')}}" class="">S'inscrire</a></li>
+          <li class=""><a href="{{url('citoyens/create')}}" class="">S'inscrire</a></li>
             <li id="nav-login-btn" class="active"><a href="{{url('login')}}" class="">Login</a></li>
         </ul>
         </div>

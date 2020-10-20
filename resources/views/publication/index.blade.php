@@ -214,7 +214,12 @@ $(document).ready(function(){
                     <tr> 
 					
 					<td>{{$publication->titre}}</td>
-			<td>{{$publication->wilaya}}</td>
+					
+			<td>
+			
+			{{$publication->wilaya}}
+			
+			</td>
 			<td>{{$publication->profession}}</td>
 			<td>{{$publication->maladie}}</td>
 			<td>{{$publication->source}}</td>
@@ -249,7 +254,7 @@ $(document).ready(function(){
                     <li class="page-item"><a href="#" class="page-link">2</a></li>
                     <li class="page-item"><a href="#" class="page-link">3</a></li>
                     <li class="page-item"><a href="#" class="page-link">4</a></li>
-                    <li class="page-item"><a href="#" class="page-link">5</a></li>
+                    <li class="page-item active"><a href="#" class="page-link">5</a></li>
                     <li class="page-item"><a href="#" class="page-link">Next</a></li>
                 </ul>
             </div>

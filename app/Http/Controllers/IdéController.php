@@ -20,7 +20,7 @@ class IdéController extends Controller
 		
 		$idé->categories = $request->input('categories');
 		$idé->status = $request->input('status');
-		$idé->vote = $request->input('vote');
+		
 		
 		
 		
@@ -57,12 +57,12 @@ class IdéController extends Controller
     	return view('idé.edit', ['idé'=>$idé]);
     }
     public function update(Request $request, $id){
-    	$idé = Publication::find($id);
+    	$idé = Idé::find($id);
     	$idé->titre = $request->input('titre');
     	$idé->contenu = $request->input('contenu');
 		$idé->categories = $request->input('categories');
 		$idé->status = $request->input('status');
-		$idé->vote = $request->input('vote');
+		
 		
     	$idé->save();
     	return redirect('idés');    	

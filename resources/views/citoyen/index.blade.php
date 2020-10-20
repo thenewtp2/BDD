@@ -198,14 +198,17 @@ $(document).ready(function(){
             <table class="table table-bordered">
                 <thead>
                     <tr>
-                        <th>#</th>
+                       
                         <th>nom</th>
                         <th>prenom</th> 
+						 <th>date</th>
+
                         <th>email</th>
-                        <th>commune</th>
-                        <th>willaya</th>
+						 <th>password</th>
+                       
                         <th>profession</th>
                         <th>maladie</th>
+						 <th>willaya</th>
                         
                         <th>actions</th>
                     </tr>
@@ -215,11 +218,14 @@ $(document).ready(function(){
                     <tr>
                        	<td>{{$citoyen->nom}}</td>
 						<td>{{$citoyen->prenom}}</td>
+						<td>{{$citoyen->date}}</td>
+						
 						<td>{{$citoyen->email}}</td>
-						<td>{{$citoyen->commune}}</td>
-			<td>{{$citoyen->wilaya}}</td>
+						<td>{{$citoyen->password}}</td>
+			
 			<td>{{$citoyen->profession}}</td>
 			<td>{{$citoyen->maladie}}</td>
+			<td>{{$citoyen->wilaya}}</td>
 			
                         
                         
